@@ -14,6 +14,6 @@ Consta de un menu con las opciones iniciales y corre sobre consola.
 
 Consideraciones
 *El programa corre en consola y esta hecho con c++ standard
-*compilar con: "g++ Animal.h albergue.cpp"
+*compilar con: "g++ Animal.h Grupos.h albergue.cpp"
 *correr en linux: "/a.out"
 *correr en windows: "a.exe"
