@@ -1,9 +1,13 @@
 /*
  * Clase Animal
  *Permite la creación de objetos tipo animal
- * que ingresan al albergue
+ * que ingresan al albergue, es abstracta, debido a que realmente
+ * no se manda a llamar
  */
  
+#ifndef ANIMAL_H_
+#define ANIMAL_H_
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -21,13 +25,28 @@ class Animal{
 		
 		
 	public: //Métodos
-		//Constructores
-		Animal(): tipo(""),nombre(""), raza(""),genero(""),color(""),edad(), fecha_e(){}; //Por default
+		/*
+		* Constructor por default
+		*
+		* @param
+		* return Objeto Animal
+		*/
+		Animal(): tipo(""),nombre(""), raza(""),genero(""),color(""),edad(), fecha_e(){}; 
+		/*
+		* Constructor 
+		*
+		* @param string tip: tipo de animal, string nom: nombre, string raz: raza del animal,
+		* string gen : genero del animal, string col: color animal, int ed: edad, string fecha_e:
+		* fecha de entrada al albergue
+		*
+		* @return Objeto Animal
+		*/
 		Animal(string tip,string nom, string raz,string gen,string col,int ed, string f_e): 
 		tipo(tip),nombre(nom),raza(raz),genero(gen),color(col),edad(ed),fecha_e(f_e){};
 		
 		
-		virtual void print(); // Imprime los datos del animal, usa polimorfismo
+		//Funciones
+		virtual void printDatos(); // Imprime los datos del animal, usa polimorfismo
 		
 		string get_tipo();//Funciones get
 		string get_nombre(); 
@@ -48,84 +67,188 @@ class Animal{
 		
 };
 
-//getters
+/*
+ * getter tipo
+ *
+ * @param
+ * @return string: tipo de animal
+*/
 string Animal::get_tipo(){
 	return tipo;
 }
+/*
+ * getter nombre
+ *
+ * @param
+ * @return string: nombre del animal
+*/
 string Animal::get_nombre(){
 	return nombre;
 }
+/*
+ * getter raza
+ *
+ * @param
+ * @return string: raza del animal
+*/
  string Animal ::get_raza(){
 	return raza;
 }
+/*
+ * getter genero
+ *
+ * @param
+ * @return string: género del animal
+*/
 string Animal ::get_genero(){
 	return genero;
 }
+/*
+ * getter color
+ *
+ * @param
+ * @return string: color del animal
+*/
 string Animal ::get_color(){
 	return color;
 }
+/*
+ * getter edad
+ *
+ * @param
+ * @return int: edad del animal
+*/
 int Animal:: get_edad(){
 	return edad;
 }
+/*
+ * getter fecha entrada
+ *
+ * @param
+ * @return string: fecha de entrada al albergue
+*/
 string Animal:: get_fecha_e(){
 	return fecha_e;
 }
 
 
 //setters
+
+/*
+ * setter tipo
+ *
+ * @param string: tipo animal
+ * @return 
+*/
 void Animal ::set_tipo(	string tip){
 	tipo = tip;
 }
+/*
+ * setter nombre
+ *
+ * @param string: nombre del animal
+ * @return 
+*/
 void Animal::set_nombre(string nom){
 	nombre = nom;
 }
+/*
+ * setter raza
+ *
+ * @param string: raza del animal
+ * @return 
+*/
 void Animal:: set_raza(string raz){
 	raza = raz;
 }
+/*
+ * setter género
+ *
+ * @param string: genero del animal
+ * @return 
+*/
 void Animal:: set_genero(string gen){
 	genero = gen;
 }
+/*
+ * setter color
+ *
+ * @param string: color del animal
+ * @return 
+*/
 void Animal:: set_color(string col){
 	color = col;
+
 }
+/*
+ * setter edad
+ *
+ * @param int: edad del animal en meses
+ * @return 
+*/
 void Animal:: set_edad(int ed){
 	edad = ed;
 }
+/*
+ * setter fecha entrada
+ *
+ * @param string: fecha entrada del animal
+ * @return 
+*/
 void Animal :: set_fecha_e(string f_e){
 	fecha_e = f_e;
 }
 
 //Funciones
-void Animal :: print(){
-	cout<<"Tipo: "<<tipo<<endl;
-	cout<<"Nombre: "<<nombre<<endl;
-	cout<<"Raza: "<<raza<<endl;
-	cout<<"Genero: "<<genero<<endl;
-	cout<<"Color: "<<color<<endl;
-	cout<<"Edad: "<<edad<<" meses"<<endl;
-	cout<<"Fecha de entrada: "<<fecha_e<<endl;
-	if (edad>84) //Si su edad es mayor a 7 años 
-		cout<<"Estado: No adoptable\n"; // No se puede adoptar
-	else
-		cout<<"Estado: Adoptable\n"; // Si es menor a los 7 años
-		
+
+/*
+ * printDatos
+ *
+ * @param 
+ * @return 
+*/
+void Animal :: printDatos(){
+	cout<<"\nTipo: "<<get_tipo()<<endl;
+	cout<<"Nombre: "<<get_nombre()<<endl;
+	cout<<"Raza:"<<get_raza()<<endl;
+	cout<<"Genero: "<<get_genero()<<endl;
+	cout<<"Color: "<<get_color()<<endl;
+	cout<<"Edad: "<<get_edad()<<endl;
 }
+
+
+/*
+ * Clase Mamifero
+ * Hereda métodos de la clase Animal
+ * Permite la creación de objetos tipo Mamifero
+ * que ingresan al albergue 
+ */
+
 
 class Mamifero : public Animal{ //HERENCIA CLASE ANIMAL
 	private:
-	string pelo;
-	string hijos;
+		string pelo;
+		string hijos;
 	
 	public:
-	Mamifero(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pel,string hij): 
+		/*
+		* Constructor 
+		*
+		* @param string tip: tipo de animal, string nom: nombre, string raz: raza del animal,
+		* string gen : genero del animal, string col: color animal, int ed: edad, string fecha_e:
+		* fecha de entrada al albergue (Ya definidos en en constructor de Animal)
+		* string pel: tamaño del pelo, string hij: Si ha tenido hijos o no
+		*
+		* @return Objeto Animal
+		*/
+		Mamifero(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pel,string hij): 
 		Animal(tip,nom,raz,gen,col,ed,f_e),pelo(pel),hijos(hij){};
 		
-		void print();
+		void printDatos(); //Funciones
 		
 		string get_pelo();//Funciones get
 		string get_hijos(); 
 				
-		
 		void set_pelo(string); //Funciones set
 		void set_hijos(string); 
 	
@@ -133,39 +256,95 @@ class Mamifero : public Animal{ //HERENCIA CLASE ANIMAL
 
 
 //getters
+
+/*
+ * getter pelo
+ *
+ * @param
+ * @return string: largo del pelo
+*/
 string Mamifero::get_pelo(){
 	return pelo;
 }
-string Mamifero:: get_hijos(){
+/*
+ * getter hijos
+ *
+ * @param
+ * @return string: Si ha tenido hijos o no
+*/
+string Mamifero::get_hijos(){
 	return hijos;
 }
 
 //setters
+
+/*
+ * setter pelo
+ *
+ * @param string: largo del pelo
+ * @return 
+*/
 void Mamifero ::set_pelo(string pel){
 	pelo = pel;
 }
-
+/*
+ * setter hijos
+ *
+ * @param string: Si ha tenido hijos o no
+ * @return 
+*/
 void Mamifero ::set_hijos(string hij){
 	hijos = hij;
 }
 
 //Funciones
-void Mamifero :: print(){
-	Animal :: print();
-	cout<<"Su pelaje es: "<<pelo<<endl;
-	cout<<"Puede tener hijos: "<<hijos<<endl;
+
+/*
+ * printDatos
+ *
+ * @param 
+ * @return 
+*/
+void Mamifero :: printDatos(){
+	Animal :: printDatos();
+	cout<<"Pelo: "<<get_pelo()<<endl;
+	cout<<"Puede tener hijo o ha tenido: "<<get_hijos()<<endl;
+	if (get_edad()>84) //Si su edad es mayor a 7 años 
+		cout<<"Estado: No adoptable\n"; // No se puede adoptar
+	else
+		cout<<"Estado: Adoptable\n"; // Si es menor a los 7 años
+	cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
 }
+
+
+/*
+ * Clase Oviparo
+ * Hereda métodos de la clase Animal
+ * Permite la creación de objetos tipo Oviparo
+ * que ingresan al albergue 
+ */
+ 
 
 class Oviparo : public Animal{ //HERENCIA CLASE ANIMAL
 	private:
-	string piel;
-	string huevos;
+		string piel;
+		string huevos;
 	
 	public:
-	Oviparo(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pie, string huev):
+		/*
+		* Constructor 
+		*
+		* @param string tip: tipo de animal, string nom: nombre, string raz: raza del animal,
+		* string gen : genero del animal, string col: color animal, int ed: edad, string fecha_e:
+		* fecha de entrada al albergue (Ya definidos en en constructor de Animal)
+		* string pie: tipo de piel, string huev: Si puede poner huevos
+		*
+		* @return Objeto Animal
+		*/
+		Oviparo(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pie, string huev):
 		Animal(tip,nom,raz,gen,col,ed,f_e),piel(pie),huevos(huev){};
 		
-		void print();
+		void printDatos(); //Funciones
 		
 		string get_piel();//Funciones get
 		string get_huevos(); 
@@ -177,25 +356,64 @@ class Oviparo : public Animal{ //HERENCIA CLASE ANIMAL
 };
 
 //getters
+
+/*
+ * getter piel
+ *
+ * @param
+ * @return string: Tipo de piel
+*/
 string Oviparo::get_piel(){
 	return piel;
 }
+/*
+ * getter huevos
+ *
+ * @param
+ * @return string: Si puede poner huevos
+*/
 string Oviparo:: get_huevos(){
 	return huevos;
 }
 
 //setters
+
+/*
+ * setter piel
+ *
+ * @param string: tipo de piel
+ * @return 
+*/
 void Oviparo ::set_piel(string pie){
 	piel = pie;
 }
-
+/*
+ * setter huevos
+ *
+ * @param string: si puede poner huevos
+ * @return 
+*/
 void Oviparo::set_huevos (string huev){
 	huevos = huev;
 }
 
 //Funciones
-void Oviparo :: print(){
-	Animal :: print();
-	cout<<"Tipo de piel: "<<piel<<endl;
-	cout<<"Puede poner huevos: "<<huevos<<endl;
+/*
+ * printDatos
+ *
+ * @param 
+ * @return 
+*/
+void Oviparo :: printDatos(){
+	Animal :: printDatos();
+	cout<<"Pelo: "<<get_piel()<<endl;
+	cout<<"Puede poner huevos (Si/No): "<<get_huevos()<<endl;
+	if (get_edad()>60) //Si su edad es mayor a 5 años 
+		cout<<"Estado: No adoptable\n"; // No se puede adoptar
+	else
+		cout<<"Estado: Adoptable\n"; // Si es menor a los 5 años
+	cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
 }
+
+
+#endif // ANIMAL_H_
