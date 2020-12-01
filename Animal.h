@@ -14,7 +14,7 @@ using namespace std;
 
 
 class Animal{
-	private: //Atributos
+    private: //Atributos
 		string tipo;
 		string nombre;
 		string raza;
@@ -31,22 +31,26 @@ class Animal{
 		* @param
 		* return Objeto Animal
 		*/
-		Animal(): tipo(""),nombre(""), raza(""),genero(""),color(""),edad(), fecha_e(){}; 
+		Animal(): tipo(""),nombre(""), raza(""),genero(""),color(""),edad(), 
+        fecha_e(){}; 
 		/*
 		* Constructor 
 		*
-		* @param string tip: tipo de animal, string nom: nombre, string raz: raza del animal,
-		* string gen : genero del animal, string col: color animal, int ed: edad, string fecha_e:
-		* fecha de entrada al albergue
+		* @param string tip: tipo de animal, string nom: nombre, string raz:
+        * raza del animal, string gen : genero del animal, string col: color
+        * animal, int ed: edad, string fecha_e: fecha de entrada al albergue
 		*
 		* @return Objeto Animal
 		*/
-		Animal(string tip,string nom, string raz,string gen,string col,int ed, string f_e): 
-		tipo(tip),nombre(nom),raza(raz),genero(gen),color(col),edad(ed),fecha_e(f_e){};
+		Animal(string tip,string nom, string raz,string gen,string col,int ed, 
+        string f_e): 
+		tipo(tip),nombre(nom),raza(raz),genero(gen),color(col),edad(ed),
+        fecha_e(f_e){};
 		
 		
 		//Funciones
-		virtual void printDatos(); // Imprime los datos del animal, usa polimorfismo
+		virtual void printDatos(); // Imprime los datos del animal, 
+                                   //Usa polimorfismo
 		
 		string get_tipo();//Funciones get
 		string get_nombre(); 
@@ -234,14 +238,16 @@ class Mamifero : public Animal{ //HERENCIA CLASE ANIMAL
 		/*
 		* Constructor 
 		*
-		* @param string tip: tipo de animal, string nom: nombre, string raz: raza del animal,
-		* string gen : genero del animal, string col: color animal, int ed: edad, string fecha_e:
-		* fecha de entrada al albergue (Ya definidos en en constructor de Animal)
-		* string pel: tamaño del pelo, string hij: Si ha tenido hijos o no
+		* @param string tip: tipo de animal, string nom: nombre, string raz: 
+        * raza del animal, string gen : genero del animal, string col: color
+        * animal, int ed: edad, string fecha_e: fecha de entrada al albergue
+        * (Ya definidos en en constructor de Animal) string pel: tamaño del 
+        * pelo, string hij: Si ha tenido hijos o no
 		*
 		* @return Objeto Animal
 		*/
-		Mamifero(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pel,string hij): 
+		Mamifero(string tip,string nom, string raz,string gen,string col,int ed,
+        string f_e, string pel,string hij): 
 		Animal(tip,nom,raz,gen,col,ed,f_e),pelo(pel),hijos(hij){};
 		
 		void printDatos(); //Funciones
@@ -313,7 +319,7 @@ void Mamifero :: printDatos(){
 		cout<<"Estado: No adoptable\n"; // No se puede adoptar
 	else
 		cout<<"Estado: Adoptable\n"; // Si es menor a los 7 años
-		cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
+	cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
 }
 
 
@@ -334,14 +340,16 @@ class Oviparo : public Animal{ //HERENCIA CLASE ANIMAL
 		/*
 		* Constructor 
 		*
-		* @param string tip: tipo de animal, string nom: nombre, string raz: raza del animal,
-		* string gen : genero del animal, string col: color animal, int ed: edad, string fecha_e:
-		* fecha de entrada al albergue (Ya definidos en en constructor de Animal)
-		* string pie: tipo de piel, string huev: Si puede poner huevos
+		* @param string tip: tipo de animal, string nom: nombre, string raz:
+        * raza del animal, string gen : genero del animal, string col: color 
+        * animal, int ed: edad, string fecha_e: fecha de entrada al albergue 
+        * (Ya definidos en en constructor de Animal) string pie: tipo de piel,
+        * string huev: Si puede poner huevos
 		*
 		* @return Objeto Animal
 		*/
-		Oviparo(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pie, string huev):
+		Oviparo(string tip,string nom, string raz,string gen,string col,int ed,
+        string f_e, string pie, string huev):
 		Animal(tip,nom,raz,gen,col,ed,f_e),piel(pie),huevos(huev){};
 		
 		void printDatos(); //Funciones
@@ -412,7 +420,7 @@ void Oviparo :: printDatos(){
 		cout<<"Estado: No adoptable\n"; // No se puede adoptar
 	else
 		cout<<"Estado: Adoptable\n"; // Si es menor a los 5 años
-		cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
+	    cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
 }
 
 
