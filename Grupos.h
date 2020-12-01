@@ -15,7 +15,7 @@
 using namespace std;
 
 class Grupos{
-	private: //Atributos
+    private: //Atributos
 	
 	vector <Mamifero> mamiferos; //Vector que almacena animales de tipo Mamífero
 	vector <Oviparo> oviparos; //Vector que almacena animales de tipo Ovíparo
@@ -26,8 +26,10 @@ class Grupos{
 	//Funciones
 	void ejemplosM();
 	void ejemplosO();
-	void agregarM(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pel,string hij);
-	void agregarO(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pie,string huev);
+	void agregarM(string tip,string nom, string raz,string gen,string col,
+    int ed, string f_e, string pel,string hij);
+	void agregarO(string tip,string nom, string raz,string gen,string col,
+    int ed, string f_e, string pie,string huev);
 	void mostrarM();
 	void mostrarO();
 	void actualizarM(string nombre);
@@ -64,13 +66,17 @@ Grupos :: Grupos(){
 */
 
 void Grupos ::ejemplosM(){
-	Mamifero perro("Perro","Scooby","Gran Danes","Macho","Cafe",23,"18/11/2020","Corto","No");
+	Mamifero perro("Perro","Scooby","Gran Danes","Macho","Cafe",23,"18/11/2020",
+    "Corto","No");
 	mamiferos.push_back (perro);
-	Mamifero gato("Gato","Garfield","Americano","Macho","Naranja",12,"24/11/2020","Corto","No");
+	Mamifero gato("Gato","Garfield","Americano","Macho","Naranja",12,
+    "24/11/2020","Corto","No");
 	mamiferos.push_back (gato);
-	Mamifero perro2("Perro","Firulais","Sabueso","Macho","Cafe",10,"24/11/2020","Corto","No");
+	Mamifero perro2("Perro","Firulais","Sabueso","Macho","Cafe",10,"24/11/2020",
+    "Corto","No");
 	mamiferos.push_back (perro2);
-	Mamifero conejo("Conejo","Bugs Bunny","Jersey Woooly","Macho","Gris",30,"26/11/2020","Corto","No");
+	Mamifero conejo("Conejo","Bugs Bunny","Jersey Woooly","Macho","Gris",30,
+    "26/11/2020","Corto","No");
 	mamiferos.push_back (conejo);
 }
 
@@ -86,13 +92,17 @@ void Grupos ::ejemplosM(){
 */
 
 void Grupos ::ejemplosO(){
-	Oviparo ave("Pajaro","Piolin","Canario","Hembra","Amarillo",3,"19/11/2020","Plumas","Si");
+	Oviparo ave("Pajaro","Piolin","Canario","Hembra","Amarillo",3,"19/11/2020",
+    "Plumas","Si");
 	oviparos.push_back (ave);
-	Oviparo blu("Pajaro","Blue","Guacamayo Azul","Macho","Azul",7,"18/11/2020","Plumas","No");
+	Oviparo blu("Pajaro","Blue","Guacamayo Azul","Macho","Azul",7,"18/11/2020",
+    "Plumas","No");
 	oviparos.push_back (blu);
-	Oviparo loco("Pajaro","Loco","Carpintero","Macho","Varios",12,"20/11/2020","Plumas","No");
+	Oviparo loco("Pajaro","Loco","Carpintero","Macho","Varios",12,"20/11/2020",
+    "Plumas","No");
 	oviparos.push_back (loco);
-	Oviparo tortuga("Tortuga","Donatello","Tortuga Verde","Macho","Verde",25,"18/11/2020","Cuero","No");
+	Oviparo tortuga("Tortuga","Donatello","Tortuga Verde","Macho","Verde",25,
+    "18/11/2020","Cuero","No");
 	oviparos.push_back (tortuga);
 }
 
@@ -106,7 +116,8 @@ void Grupos ::ejemplosO(){
  * @return
  */
  
-void Grupos::agregarM(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pel,string hij){
+void Grupos::agregarM(string tip,string nom, string raz,string gen,string col,
+int ed, string f_e, string pel,string hij){
 
   	Mamifero auxM(tip,nom,raz,gen,col,ed,f_e,pel,hij);
   	mamiferos.push_back (auxM);
@@ -122,7 +133,8 @@ void Grupos::agregarM(string tip,string nom, string raz,string gen,string col,in
  * @return
  */
  
-void Grupos::agregarO(string tip,string nom, string raz,string gen,string col,int ed, string f_e, string pie,string huev){
+void Grupos::agregarO(string tip,string nom, string raz,string gen,string col,
+int ed, string f_e, string pie,string huev){
 
   	Oviparo auxO(tip,nom,raz,gen,col,ed,f_e,pie,huev);
   	oviparos.push_back (auxO);
@@ -398,7 +410,8 @@ void Grupos:: encontrarM(){
 				mamiferos[i].printDatos();
 			}
 			else
-				cout<<"No se ha encontrado ese tipo en "<<mamiferos[i].get_nombre()<<"\n";
+				cout<<"No se ha encontrado ese tipo en ";
+                cout<<mamiferos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -413,7 +426,8 @@ void Grupos:: encontrarM(){
 				mamiferos[i].printDatos();
 			}
 			else
-				cout<<"No se ha encontrado ese genero en "<<mamiferos[i].get_nombre()<<"\n";
+				cout<<"No se ha encontrado ese genero en ";
+                cout<<mamiferos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -428,7 +442,8 @@ void Grupos:: encontrarM(){
 				mamiferos[i].printDatos();
 			}
 			else
-				cout<<"No se ha encontrado ese color en "<<mamiferos[i].get_nombre()<<"\n";
+				cout<<"No se ha encontrado ese color en ";
+                cout<<mamiferos[i].get_nombre()<<"\n";
 		}
 		break;
 	}		
@@ -467,7 +482,8 @@ void Grupos:: encontrarO(){
 				oviparos[i].printDatos();
 			}
 			else
-				cout<<"No se ha encontrado ese tipo en "<<oviparos[i].get_nombre()<<"\n";
+				cout<<"No se ha encontrado ese tipo en ";
+                cout<<oviparos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -482,7 +498,8 @@ void Grupos:: encontrarO(){
 				oviparos[i].printDatos();
 			}
 			else
-				cout<<"No se ha encontrado ese genero en "<<oviparos[i].get_nombre()<<"\n";
+				cout<<"No se ha encontrado ese genero en ";
+                cout<<oviparos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -497,7 +514,8 @@ void Grupos:: encontrarO(){
 				oviparos[i].printDatos();
 			}
 			else
-				cout<<"No se ha encontrado ese color en "<<oviparos[i].get_nombre()<<"\n";	
+				cout<<"No se ha encontrado ese color en ";
+                cout<<oviparos[i].get_nombre()<<"\n";	
 		}
 		break;
 	}
