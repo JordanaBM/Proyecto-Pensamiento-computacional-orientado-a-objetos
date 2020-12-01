@@ -365,6 +365,8 @@ void Grupos:: encontrarM(){
 			{
 				mamiferos[i].printDatos();
 			}
+			else
+				cout<<"No se ha encontrado ese tipo en "<<mamiferos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -378,6 +380,8 @@ void Grupos:: encontrarM(){
 			{
 				mamiferos[i].printDatos();
 			}
+			else
+				cout<<"No se ha encontrado ese genero en "<<mamiferos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -391,7 +395,8 @@ void Grupos:: encontrarM(){
 			{
 				mamiferos[i].printDatos();
 			}
-			
+			else
+				cout<<"No se ha encontrado ese color en "<<mamiferos[i].get_nombre()<<"\n";
 		}
 		break;
 	}
@@ -419,6 +424,8 @@ void Grupos:: encontrarO(){
 			{
 				oviparos[i].printDatos();
 			}
+			else
+				cout<<"No se ha encontrado ese tipo en "<<oviparos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -432,6 +439,8 @@ void Grupos:: encontrarO(){
 			{
 				oviparos[i].printDatos();
 			}
+			else
+				cout<<"No se ha encontrado ese genero en "<<oviparos[i].get_nombre()<<"\n";
 			
 		}
 		break;
@@ -445,7 +454,8 @@ void Grupos:: encontrarO(){
 			{
 				oviparos[i].printDatos();
 			}
-			
+			else
+				cout<<"No se ha encontrado ese color en "<<oviparos[i].get_nombre()<<"\n";	
 		}
 		break;
 	}
