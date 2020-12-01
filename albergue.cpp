@@ -1,8 +1,9 @@
-*
+/*
  * Proyecto Pensamiento
  * Computacional Orientado a Objetos
  * Jordana Betancourt Menchaca
  * A01707434
+ * 4/12/2020
  */
 
 /*
@@ -18,7 +19,7 @@
 #include <iostream>   //Para imprimir
 #include "Animal_f.h" //Clase Animal
 #include "Grupos.h" //Clase Grupos que guarda toda la información de los animales
-#include <string>
+#include <string> //Permite uso de strings
 
 
 using namespace std;
