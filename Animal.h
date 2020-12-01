@@ -313,7 +313,7 @@ void Mamifero :: printDatos(){
 		cout<<"Estado: No adoptable\n"; // No se puede adoptar
 	else
 		cout<<"Estado: Adoptable\n"; // Si es menor a los 7 años
-	cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
+		cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
 }
 
 
@@ -412,7 +412,7 @@ void Oviparo :: printDatos(){
 		cout<<"Estado: No adoptable\n"; // No se puede adoptar
 	else
 		cout<<"Estado: Adoptable\n"; // Si es menor a los 5 años
-	cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
+		cout<<"Fecha de entrada: "<<get_fecha_e()<<endl;
 }
 
 
